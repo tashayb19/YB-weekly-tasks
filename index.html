@@ -6,20 +6,36 @@
   <title>Team Weekly Task Reports</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 2rem; background-color: #f6f8fa; color: #24292f; }
-    h1 { border-bottom: 2px solid #d0d7de; padding-bottom: 0.5rem; }
+    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #d0d7de; padding-bottom: 0.5rem; margin-bottom: 1.5rem; }
+    h1 { margin: 0; }
+    .btn-submit { background-color: #1f883d; color: white; padding: 10px 18px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background-color 0.2s; }
+    .btn-submit:hover { background-color: #1a7f37; }
     .card { background: white; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
     .card h2 { margin-top: 0; color: #0969da; }
     .meta { font-size: 0.9rem; color: #57603a; margin-bottom: 1rem; }
   </style>
 </head>
 <body>
-  <h1>Marketing Team — Weekly Task Reports</h1>
+
+  <div class="header">
+    <h1>Marketing Team — Weekly Task Reports</h1>
+    <!-- DIRECT LINK TO THE REPORT FORM -->
+    <a id="submit-btn" class="btn-submit" href="#" target="_blank">+ Submit Weekly Report</a>
+  </div>
+
   <div id="reports-container">Loading reports...</div>
 
   <script>
-    // REPLACE THESE TWO LINES WITH YOUR ACTUAL GITHUB INFO:
+    // -------------------------------------------------------------
+    // REPLACE THESE WITH YOUR GITHUB USERNAME & REPOSITORY NAME:
+    // -------------------------------------------------------------
     const REPO_OWNER = 'tashayb19';
-    const REPO_NAME = 'YB-weekly-tasks';
+    const REPO_NAME = 'team-weekly-reports';
+    // -------------------------------------------------------------
+
+    // Direct link to open the pre-formatted Issue Form template
+    document.getElementById('submit-btn').href = 
+      `https://github.com/${REPO_OWNER}/${REPO_NAME}/issues/new?template=weekly-task-report.yml`;
 
     async function fetchReports() {
       const container = document.getElementById('reports-container');
