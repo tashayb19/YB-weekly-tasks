@@ -1,0 +1,81 @@
+name: "Weekly Task Report"
+description: "Submit your weekly task report matching the team template."
+title: "[Weekly Report] - "
+labels: ["weekly-report"]
+body:
+  - type: markdown
+    attributes:
+      value: "## General Information"
+
+  - type: input
+    id: member_name
+    attributes:
+      label: "Team Member Name"
+      placeholder: "e.g., Tasha"
+    validations:
+      required: true
+
+  - type: input
+    id: role_department
+    attributes:
+      label: "Role / Department"
+      placeholder: "e.g., Assistant Marketing Manager"
+    validations:
+      required: true
+
+  - type: input
+    id: week_of
+    attributes:
+      label: "Week Of"
+      placeholder: "e.g., Nov 9, 2026"
+    validations:
+      required: true
+
+  - type: input
+    id: supervisor
+    attributes:
+      label: "Manager / Supervisor"
+      placeholder: "e.g., Priscilla - Head of Brand & Marketing"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## In-Progress & Ongoing Tasks"
+
+  - type: textarea
+    id: tasks
+    attributes:
+      label: "Tasks Table"
+      description: "Format each task as a markdown table row or list."
+      placeholder: |
+        | Task / Project | Current Status | % Complete | Expected Completion | Next Steps |
+        |---|---|---|---|---|
+        | Thanksgiving CSR Plan | In Progress | 85% | Nov 11, 2026 | Moving to Canva presentation |
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: "## Blockers, Challenges & Support Needed"
+
+  - type: textarea
+    id: blockers
+    attributes:
+      label: "Blockers & Support Needed"
+      placeholder: |
+        - Technical / Operational Blockers: None
+        - Cross-Department Support Required: None
+        - Manager Support Needed: Review Thanksgiving CSR plan timing
+
+  - type: markdown
+    attributes:
+      value: "## Operational Notes & Feedback"
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Operational Notes & Feedback"
+      placeholder: |
+        - Process Improvements: None
+        - General Notes: None
